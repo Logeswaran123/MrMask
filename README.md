@@ -33,4 +33,4 @@ Note:<br />
 python mrmask.py --video <path to video file> --mask 6
 ```
 Note:<br />
--- mask 6 -> 6 corresponds to pikachu.png in MASK dict.
+--mask 6 -> 6 corresponds to pikachu.png in MASK dict.
