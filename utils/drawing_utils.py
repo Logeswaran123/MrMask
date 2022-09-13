@@ -125,8 +125,10 @@ class Draw():
             copy = image.copy()
             file_name = MASK[mask_idx]
             mask = cv2.imread("./data/masks/" + file_name)
+            mask = cv2.cvtColor(mask, cv2.COLOR_RGB2BGR)
             mask = cv2.resize(mask, (mask_width + mask_width // 2, mask_height + mask_height // 2))
             mask_h, mask_w, _ = mask.shape
+
             # Overlay mask
             try:
                 copy[int(mask_center[1] - mask_h / 2) : int(mask_center[1] + mask_h / 2), \
