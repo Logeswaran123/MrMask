@@ -30,7 +30,12 @@ Note:<br />
 ## Results :bar_chart:
 
 ```python
-python mrmask.py --video <path to video file> --mask 6
+python mrmask.py --video <path to video file> --mask 6 --face multi --mesh True
 ```
 Note:<br />
 --mask 6 -> 6 corresponds to pikachu.png in MASK dict.
+
+https://user-images.githubusercontent.com/36563521/189902888-7f92f2fe-45da-481b-b0f3-5bf1fdef51c8.mp4
+
+Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-selfies-5935550/).
+---
