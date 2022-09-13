@@ -6,7 +6,7 @@ from utils.const import MASK
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', "--video", required=False, default=0,
-                                        help="Path to video source file. Used webcam, if not provided",
+                                        help="Path to video source file. Uses webcam, if not provided",
                                         type=str)
     parser.add_argument('-f', "--face", required=False, default='single', choices=['single', 'multi'],
                                         help="Single or multi face", type=str)
