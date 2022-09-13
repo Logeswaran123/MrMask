@@ -1,6 +1,6 @@
 import argparse
 
-from utils.mask import Mask
+from utils.mask_utils import Mask
 from utils.const import MASK
 
 if __name__ == '__main__':
