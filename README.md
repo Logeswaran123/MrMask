@@ -29,4 +29,8 @@ Note:<br />
 
 ## Results :bar_chart:
 
-** TODO **
+```python
+python mrmask.py --video <path to video file> --mask 6
+```
+Note:<br />
+-- mask 6 -> 6 corresponds to pikachu.png in MASK dict.
