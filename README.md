@@ -1,4 +1,4 @@
-# MrMask
+# Mr.Mask
 <p>
 An application that overlays a mask on the human face using mediapipe face mesh model.
 </p>
