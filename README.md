@@ -23,9 +23,9 @@ python mrmask.py --video <path to video file> --face <face mode> --mask <mask nu
 Note:<br />
 
 *<path to video file\>* - Path to the input video file. If not provided, enable webcam.<br />
-*<face mode\>* - Face mode mentioning single face or multiple faces. Choices: "single" or "multi". Default: single <br />
+*<face mode\>* - Face mode mentioning single face or multiple faces. <b>Choices: "single" or "multi". Default: single </b><br />
 *<mask number\>* - Mask number corresponding to mask key of MASK dict in utils/const.py. Random mask if argument not provided. <br />
-*<face mesh\>* - Add face mesh on detected faces. Choices: "True" or "False". Default: False <br />
+*<face mesh\>* - Add face mesh on detected faces. <b>Choices: "True" or "False". Default: False </b><br />
 
 ## Results :bar_chart:
 
