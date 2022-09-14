@@ -39,3 +39,9 @@ https://user-images.githubusercontent.com/36563521/189902888-7f92f2fe-45da-481b-
 
 Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-selfies-5935550/).
 ---
+
+```python
+python mrmask.py
+```
+
+Happy Learning! 😄
