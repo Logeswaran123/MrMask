@@ -44,6 +44,8 @@ Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-s
 python mrmask.py
 ```
 
+** TODO: Add result video **
+
 ## References :page_facing_up:
 
 * [Mediapipe by Google](https://github.com/google/mediapipe).
