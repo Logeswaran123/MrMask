@@ -4,7 +4,7 @@ An application that overlays a mask on the human face using mediapipe face mesh 
 </p>
 
 ## Description :scroll:
-** TODO **
+Use [MakeSense](https://www.makesense.ai/) annotation tool to annaotate the mask. Place the mask png image and annotations csv files in /data/masks dir. Ensure the mask image and annotations csv files have same filename. Add the mask png image filename in dict in utils/const.py.
 
 ## General Requirements :mage_man:
 1. Record a video of person or enable a live cam.
