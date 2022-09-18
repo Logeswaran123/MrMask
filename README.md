@@ -59,6 +59,10 @@ python mrmask.py
 
 https://user-images.githubusercontent.com/36563521/190899721-1ed9d360-8770-468b-8fca-0be12597768d.mp4
 
+<br />
+
+https://user-images.githubusercontent.com/36563521/190900059-ee743059-64e0-41c4-8098-bf52c98f00bb.mp4
+
 ---
 
 <p align="center"> :star: <b> Fun demo (Spoilers ahead:warning:) </b> :star: </p>
