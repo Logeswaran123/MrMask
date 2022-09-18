@@ -57,13 +57,13 @@ Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-s
 python mrmask.py
 ```
 
-** TODO: Add result video **
+https://user-images.githubusercontent.com/36563521/190899721-1ed9d360-8770-468b-8fca-0be12597768d.mp4
 
 ---
 
 <p align="center"> :star: <b> Fun demo (Spoilers ahead:warning:) </b> :star: </p>
 
-** TODO: Add result video **
+https://user-images.githubusercontent.com/36563521/190899766-7763677a-a3d5-4e42-9008-05152bf7e280.mp4
 
 ---
 
