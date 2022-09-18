@@ -38,6 +38,8 @@ Note:<br />
 
 ## Results :bar_chart:
 
+<p align="center"> :star: <b> Multiface </b> :star: </p>
+
 ```python
 python mrmask.py --video <path to video file> --mask 6 --face multi --mesh True
 ```
@@ -49,11 +51,21 @@ https://user-images.githubusercontent.com/36563521/189902888-7f92f2fe-45da-481b-
 Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-selfies-5935550/).
 ---
 
+<p align="center"> :star: <b> Live Cam demo </b> :star: </p>
+
 ```python
 python mrmask.py
 ```
 
 ** TODO: Add result video **
+
+---
+
+<p align="center"> :star: <b> Fun demo (Spoilers ahead:warning:) </b> :star: </p>
+
+** TODO: Add result video **
+
+---
 
 ## References :page_facing_up:
 
