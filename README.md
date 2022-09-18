@@ -18,7 +18,7 @@ BEARD_FACE - For masks thar cover beard area. <br />
 ## General Requirements :mage_man:
 1. Record a video of person or enable a live cam.
 2. Place the camera horizontally facing the person.
-3. Higher the resolution of video, higher the quality of estimation and measurement.
+3. Higher the resolution of input video, higher the quality of result.
 
 ## Code Requirements :mage_woman:
 ```python
