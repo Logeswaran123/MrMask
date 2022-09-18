@@ -67,6 +67,10 @@ https://user-images.githubusercontent.com/36563521/190900059-ee743059-64e0-41c4-
 
 <p align="center"> :star: <b> Fun demo (Spoilers ahead:warning:) </b> :star: </p>
 
+```python
+python mrmask.py --video <path to video file> --mask 6 --face single --mesh True
+```
+
 https://user-images.githubusercontent.com/36563521/190899766-7763677a-a3d5-4e42-9008-05152bf7e280.mp4
 
 ---
