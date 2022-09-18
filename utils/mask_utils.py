@@ -8,7 +8,8 @@ from mediapipe.python.solutions.drawing_utils import _normalized_to_pixel_coordi
 from utils.video_reader_utils import VideoReader
 from utils.const import INDEX_FINGER_TIP, MIDDLE_FINGER_MCP, \
                         PRESENCE_THRESHOLD, VISIBILITY_THRESHOLD, MASK, \
-                        FULL_FACE_MESH_LANDMARKS, HALF_FACE_MESH_LANDMARKS
+                        FULL_FACE_MESH_LANDMARKS, HALF_FACE_MESH_LANDMARKS, \
+                        BEARD_FACE_MESH_LANDMARKS
 from utils.drawing_utils import Draw
 
 mp_drawing = mp.solutions.drawing_utils
@@ -97,11 +98,17 @@ class Mask():
         def get_mesh_points(key_points):
             full_face_mesh_points = []
             half_face_mesh_points = []
-            for point in FULL_FACE_MESH_LANDMARKS:
-                full_face_mesh_points.append(key_points[point])
-            for point in HALF_FACE_MESH_LANDMARKS:
-                half_face_mesh_points.append(key_points[point])
-            return (full_face_mesh_points, half_face_mesh_points)
+            beard_face_mesh_points = []
+            try:
+                for point in FULL_FACE_MESH_LANDMARKS:
+                    full_face_mesh_points.append(key_points[point])
+                for point in HALF_FACE_MESH_LANDMARKS:
+                    half_face_mesh_points.append(key_points[point])
+                for point in BEARD_FACE_MESH_LANDMARKS:
+                    beard_face_mesh_points.append(key_points[point])
+            except:
+                pass
+            return (full_face_mesh_points, half_face_mesh_points, beard_face_mesh_points)
 
         self.key_points = self.get_face_keypoints(image, face_landmarks)
         self.get_centroid()
@@ -242,7 +249,8 @@ class Mask():
                 image = self.multi_face(image, result_hands)
 
             # Flip the image horizontally for a selfie-view display.
-            image = cv2.flip(image, 1)
+            if self.video_reader._is_live_cam:
+                image = cv2.flip(image, 1)
             out.write(image)
             cv2.imshow('MediaPipe Face Mesh', image)
             if cv2.waitKey(5) & 0xFF == 27:

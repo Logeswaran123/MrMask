@@ -50,21 +50,19 @@ class Draw():
 
     def overlay_mask(self, image, face_width, face_height, centroid, mask_idx, mesh_points):
         """ Overlay mask in image """
-        """
-        # Method 1: Using bounding box coordinates
-        copy = image.copy()
-        file_name = MASK[mask_idx]
-        mask = cv2.imread("./data/masks/" + file_name)
-        mask = cv2.resize(mask, (face_width + face_width // 2, face_height + face_height // 2))
-        mask_h, mask_w, _ = mask.shape
-        # Overlay mask
-        try:
-            copy[int(centroid[1] - mask_h / 2) : int(centroid[1] + mask_h / 2), \
-                    int(centroid[0] - mask_w / 2) : int(centroid[0] + mask_w / 2)] = mask
-        except:
-            pass
-        return copy
-        """
+        # # Method 1: Using bounding box coordinates
+        # copy = image.copy()
+        # file_name = MASK[mask_idx]
+        # mask = cv2.imread("./data/masks/" + file_name)
+        # mask = cv2.resize(mask, (face_width + face_width // 2, face_height + face_height // 2))
+        # mask_h, mask_w, _ = mask.shape
+        # # Overlay mask
+        # try:
+        #     copy[int(centroid[1] - mask_h / 2) : int(centroid[1] + mask_h / 2), \
+        #             int(centroid[0] - mask_w / 2) : int(centroid[0] + mask_w / 2)] = mask
+        # except:
+        #     pass
+        # return copy
 
         # Method 2: Using face mesh coordinates
         # Refer MESH_LANDMARKS in utils/const.py for landmarks used.
@@ -83,8 +81,10 @@ class Draw():
 
         if len(mask_pts) == len(mesh_points[0]):
             mesh_points = mesh_points[0]
-        else:
+        elif len(mask_pts) == len(mesh_points[1]):
             mesh_points = mesh_points[1]
+        else:
+            mesh_points = mesh_points[2]
         if len(mask_pts) != len(mesh_points):
             return image
 
@@ -122,17 +122,39 @@ class Draw():
     def overlay_bar(self, image):
         """ Overlay horiontal bar in image """
         def display_mask_on_bar(image, mask_width, mask_height, mask_center, mask_idx):
+            # # Method 1: Using coordinates and overwriting pixels directly
+            # copy = image.copy()
+            # file_name = MASK[mask_idx]
+            # mask = cv2.imread("./data/masks/" + file_name)
+            # mask = cv2.cvtColor(mask, cv2.COLOR_RGB2BGR)
+            # mask = cv2.resize(mask, (mask_width + mask_width // 2, mask_height + mask_height // 2))
+            # mask_h, mask_w, _ = mask.shape
+
+            # # Overlay mask
+            # try:
+            #     copy[int(mask_center[1] - mask_h / 2) : int(mask_center[1] + mask_h / 2), \
+            #             int(mask_center[0] - mask_w / 2) : int(mask_center[0] + mask_w / 2)] = mask
+            # except:
+            #     pass
+            # return copy
+
+            # Method 2: Using alpha channel for transparent mask overlay
+            # Source: https://stackoverflow.com/a/71701023
             copy = image.copy()
             file_name = MASK[mask_idx]
-            mask = cv2.imread("./data/masks/" + file_name)
-            mask = cv2.cvtColor(mask, cv2.COLOR_RGB2BGR)
+            mask = cv2.imread("./data/masks/" + file_name, cv2.IMREAD_UNCHANGED)
+            mask = cv2.cvtColor(mask, cv2.COLOR_RGBA2BGRA)
             mask = cv2.resize(mask, (mask_width + mask_width // 2, mask_height + mask_height // 2))
             mask_h, mask_w, _ = mask.shape
-
-            # Overlay mask
+            alpha_channel = mask[:, :, 3] / 255
+            overlay_colors = mask[:, :, :3]
+            alpha_mask = np.dstack((alpha_channel, alpha_channel, alpha_channel))
+            background_subsection = copy[int(mask_center[1] - mask_h / 2) : int(mask_center[1] + mask_h / 2), \
+                                            int(mask_center[0] - mask_w / 2) : int(mask_center[0] + mask_w / 2)]
+            composite = background_subsection * (1 - alpha_mask) + overlay_colors * alpha_mask
             try:
                 copy[int(mask_center[1] - mask_h / 2) : int(mask_center[1] + mask_h / 2), \
-                        int(mask_center[0] - mask_w / 2) : int(mask_center[0] + mask_w / 2)] = mask
+                            int(mask_center[0] - mask_w / 2) : int(mask_center[0] + mask_w / 2)] = composite
             except:
                 pass
             return copy
