@@ -13,7 +13,7 @@ BEARD_FACE - For masks thar cover beard area. <br />
 * Annotate the mask based on the required mode of mask.
 * Place the mask png image and annotations csv files in /data/masks dir.
 * Ensure the mask image and annotations csv files have same filename.
-* Add the mask png image filename in dict in utils/const.py.
+* Add the mask png image filename in MASK dict in utils/const.py.
 
 ## General Requirements :mage_man:
 1. Record a video of person or enable a live cam.
