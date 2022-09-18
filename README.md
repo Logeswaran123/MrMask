@@ -6,7 +6,7 @@ An application that overlays a mask on the human face using mediapipe face mesh 
 ## Description :scroll:
 * Use [MakeSense](https://www.makesense.ai/) annotation tool to annaotate the mask.
 * Refer [Mask annotated image](https://github.com/Logeswaran123/The-Masked-Man/blob/main/data/mask_points_info/gal_gadot_annotated.jpg) for all the key points.
-* Refer utils/const.py for three modes of mask annotations and their corresponding key points (FULL_FACE, HALF_FACE, BEARD_FACE). <br />
+* Refer utils/const.py for three modes of mask annotations and their corresponding key points. <br />
 FULL_FACE - For masks that cover entire face. <br />
 HALF_FACE - For masks that cover half of the face. <br />
 BEARD_FACE - For masks thar cover beard area. <br />
