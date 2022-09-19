@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## How to run :running_man:
 ```python
-python mrmask.py --video <path to video file> --face <face mode> --mask <mask number> --mesh <face mesh>
+python themaskedman.py --video <path to video file> --face <face mode> --mask <mask number> --mesh <face mesh>
 ```
 Note:<br />
 
@@ -41,7 +41,7 @@ Note:<br />
 <p align="center"> :star: <b> Multiface </b> :star: </p>
 
 ```python
-python mrmask.py --video <path to video file> --mask 6 --face multi --mesh True
+python themaskedman.py --video <path to video file> --mask 6 --face multi --mesh True
 ```
 Note:<br />
 --mask 6 -> 6 corresponds to pikachu.png in MASK dict.
@@ -54,7 +54,7 @@ Input video source [here](https://www.pexels.com/video/girl-friends-posing-for-s
 <p align="center"> :star: <b> Live Cam demo </b> :star: </p>
 
 ```python
-python mrmask.py
+python themaskedman.py
 ```
 
 https://user-images.githubusercontent.com/36563521/190899721-1ed9d360-8770-468b-8fca-0be12597768d.mp4
@@ -68,7 +68,7 @@ https://user-images.githubusercontent.com/36563521/190900059-ee743059-64e0-41c4-
 <p align="center"> :star: <b> Fun demo (Spoilers ahead:warning:) </b> :star: </p>
 
 ```python
-python mrmask.py --video <path to video file> --mask 6 --face single --mesh True
+python themaskedman.py --video <path to video file> --mask 6 --face single --mesh True
 ```
 
 https://user-images.githubusercontent.com/36563521/190899766-7763677a-a3d5-4e42-9008-05152bf7e280.mp4
