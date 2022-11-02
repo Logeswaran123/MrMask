@@ -1,4 +1,5 @@
 # 👺😷 The Masked Man 🎃🥸
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Logeswaran123/The-Masked-Man/blob/main/LICENSE)
 <p>
 An application that overlays a mask on the human face using mediapipe face mesh model.
 </p>
